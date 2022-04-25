@@ -4,6 +4,7 @@ package com.company;
 import com.company.arraysorting.*;
 import com.company.hashtable.ArrayHashTable;
 import com.company.hashtable.ChainedHashTable;
+import com.company.heap.Heap;
 import com.company.list.Employee;
 import com.company.list.IntegerLinkedList;
 import com.company.queue.ArrayQueue;
@@ -17,14 +18,14 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        treeImplementation();
+        heapImplementation();
     }
 
     private static void arraySort() {
 //        int[] arr = {10,34,-22,56,-44,5,0,75};
 //        int[] arr1 = {10,2,2,4,5,9,7,8,8};
 //        int[] arr2 = {4725,4586,1330,8729,1594,5729};
-        int[] arr3 = {56, 64, 83, 45, 95, 93, 42};
+//        int[] arr3 = {56, 64, 83, 45, 95, 93, 42};
 //        int[] result = BubbleSort.bubbleSortArray(arr);
 //        int[] result1 = SelectionSort.selectionSortArray(arr);
 //        int[] result2 = InsertionSort.insertionSortArray(arr);
@@ -33,11 +34,11 @@ public class Main {
 //        QuickSort.quickSortArray(arr,0,arr.length);
 //        CountingSort.countingSortArray(arr1,1,10);
 //        RadixSort.radixSortArray(arr2,10,4);
-        BucketSort.bucketSortArray(arr3);
-
-        for (int i : arr3) {
-            System.out.print(" " + i);
-        }
+//        BucketSort.bucketSortArray(arr3);
+//
+//        for (int i : arr3) {
+//            System.out.print(" " + i);
+//        }
     }
 
     private static void binarySearch() {
@@ -175,5 +176,24 @@ public class Main {
 //        System.out.println();
 //        System.out.println(binaryTree.getRootNode().getData());
 
+    }
+
+    private static void heapImplementation() {
+        Heap heap = new Heap(10);
+        heap.insert(80);
+        heap.insert(75);
+        heap.insert(60);
+        heap.insert(68);
+        heap.insert(55);
+        heap.insert(40);
+        heap.insert(52);
+        heap.insert(67);
+
+        heap.printHeap();
+//        int deletedValue = heap.delete(5);
+//        System.out.println("Deleted Value : " + deletedValue);
+//        heap.printHeap();
+        new HeapSort().heapSortArray(heap);
+        heap.printHeap();
     }
 }

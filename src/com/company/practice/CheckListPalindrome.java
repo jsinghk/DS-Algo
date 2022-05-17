@@ -13,7 +13,8 @@ public class CheckListPalindrome {
 
         myList.printList();
         System.out.println();
-        System.out.println("List is Palindrome : " + isPalindromeSinglyList(myList, myList.head));
+        //System.out.println("List is Palindrome : " + isPalindromeSinglyList(myList, myList.head));
+        System.out.println("List is Palindrome : " + isPalindromeSinglyList(myList.head));
 
         DoublyList list = new DoublyList();
         list.add(5);
@@ -28,6 +29,7 @@ public class CheckListPalindrome {
 
     }
 
+    //Inplace Algo
     private static boolean isPalindromeDoublyList(DoublyList list){
         DoublyList.Node head = list.head;
         DoublyList.Node tail = list.tail;
@@ -41,6 +43,7 @@ public class CheckListPalindrome {
         return true;
     }
 
+    //Uses Recursive stack space
     private static boolean isPalindromeSinglyList(MyList list, Node right){
         if (right == null){
             return true;
@@ -59,6 +62,38 @@ public class CheckListPalindrome {
 
         list.head = list.head.next;
         return res;
+    }
+
+    //Inplace with Auxiliary Space - O(1)
+    private static boolean isPalindromeSinglyList(Node head){
+        Node slow = head;
+        Node fast = head;
+        Node sprev = null;
+
+        while (fast!=null && fast.next!=null){
+            sprev = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        //When list contains odd items
+        if (fast != null){
+            slow = slow.next;
+        }
+
+        sprev.next = null;
+        Node list1Head = head;
+        Node list2Head = ReverseList.reverseList(slow);
+
+        while (list1Head != null){
+            if (list1Head.data != list2Head.data){
+                return false;
+            }
+            list1Head = list1Head.next;
+            list2Head = list2Head.next;
+        }
+
+        return true;
     }
 
 }

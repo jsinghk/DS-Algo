@@ -24,6 +24,12 @@ public class Tree {
         }
     }
 
+    public void traverseLevelOrder() {
+        if (rootNode != null){
+            rootNode.traverseLevelOrder(rootNode);
+        }
+    }
+
     public void getAllLeafNodesAndSum(){
         if (rootNode != null){
             System.out.println(rootNode.getAllLeafNodesAndSum());
@@ -34,6 +40,10 @@ public class Tree {
         if (rootNode != null){
             System.out.println(rootNode.getAllLeafNodesAndSumWhichAreLeftChild(true));
         }
+    }
+
+    public int getHeightOfTree(){
+        return rootNode.getHeightOfTree(rootNode);
     }
 
     public void delete(int value) {

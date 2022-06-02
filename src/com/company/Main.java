@@ -18,7 +18,7 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        heapImplementation();
+        treeImplementation();
     }
 
     private static void arraySort() {
@@ -158,7 +158,8 @@ public class Main {
         binaryTree.insert(26);
         binaryTree.insert(17);
 
-        binaryTree.traverseInorder();
+        //binaryTree.traverseInorder();
+        binaryTree.traverseLevelOrder();
         System.out.println();
         binaryTree.getAllLeafNodesAndSumWhichAreLeftChild();
 //        System.out.println();
@@ -175,6 +176,7 @@ public class Main {
 //        binaryTree.traverseInorder();
 //        System.out.println();
 //        System.out.println(binaryTree.getRootNode().getData());
+        System.out.println(binaryTree.getHeightOfTree());
 
     }
 

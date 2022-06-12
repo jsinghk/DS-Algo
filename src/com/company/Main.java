@@ -157,11 +157,14 @@ public class Main {
         binaryTree.insert(29);
         binaryTree.insert(26);
         binaryTree.insert(17);
+        binaryTree.insert(21);
 
+        System.out.println(binaryTree.getDiameterOfTree());
         //binaryTree.traverseInorder();
-        binaryTree.traverseLevelOrder();
+        //binaryTree.traverseLevelOrder();
+        //binaryTree.traverseZigZag();
         System.out.println();
-        binaryTree.getAllLeafNodesAndSumWhichAreLeftChild();
+        //binaryTree.getAllLeafNodesAndSumWhichAreLeftChild();
 //        System.out.println();
 //        System.out.println(binaryTree.get(27));
 //
@@ -176,7 +179,7 @@ public class Main {
 //        binaryTree.traverseInorder();
 //        System.out.println();
 //        System.out.println(binaryTree.getRootNode().getData());
-        System.out.println(binaryTree.getHeightOfTree());
+        //System.out.println(binaryTree.getHeightOfTree());
 
     }
 

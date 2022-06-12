@@ -2,6 +2,7 @@ package com.company.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class TreeNode {
 
@@ -68,6 +69,38 @@ public class TreeNode {
         }
     }
 
+    public void traverseZigZag(TreeNode root) {
+        Stack<TreeNode> curr = new Stack<>();
+        Stack<TreeNode> next = new Stack<>();
+        curr.push(root);
+        boolean leftToRight = true;
+        while (!curr.isEmpty()) {
+            TreeNode temp = curr.pop();
+            System.out.print(temp.data + " - ");
+            if (leftToRight) {
+                if (temp.leftChild != null) {
+                    next.push(temp.leftChild);
+                }
+                if (temp.rightChild != null) {
+                    next.push(temp.rightChild);
+                }
+            } else {
+                if (temp.rightChild != null) {
+                    next.push(temp.rightChild);
+                }
+                if (temp.leftChild != null) {
+                    next.push(temp.leftChild);
+                }
+            }
+            if (curr.isEmpty()) {
+                leftToRight = !leftToRight;
+                Stack<TreeNode> tempNode = curr;
+                curr = next;
+                next = tempNode;
+            }
+        }
+    }
+
     public int getAllLeafNodesAndSum() {
         int sum = 0;
         if (leftChild != null) {
@@ -106,11 +139,20 @@ public class TreeNode {
         int lheight = getHeightOfTree(node.leftChild);
         int rheight = getHeightOfTree(node.rightChild);
 
-        if (lheight >= rheight) {
-            return (lheight + 1);
-        } else {
-            return (rheight + 1);
+        return 1 + Math.max(lheight, rheight);
+    }
+
+    class A {
+        int ans = 0;
+    }
+    public int getDiameterOfTree(TreeNode node, A a) {
+        if (node == null) {
+            return 0;
         }
+        int ltree = getDiameterOfTree(node.leftChild, a);
+        int rtree = getDiameterOfTree(node.rightChild, a);
+        a.ans = Math.max(a.ans, 1 + ltree + rtree);
+        return 1 + Math.max(ltree, rtree);
     }
 
     public TreeNode get(int value) {

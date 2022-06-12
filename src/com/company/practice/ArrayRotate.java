@@ -3,7 +3,7 @@ package com.company.practice;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RotateArray {
+public class ArrayRotate {
     public static void main(String[] args){
         List<Integer> arr = new ArrayList<>();
         arr.add(1);

@@ -25,25 +25,37 @@ public class Tree {
     }
 
     public void traverseLevelOrder() {
-        if (rootNode != null){
+        if (rootNode != null) {
             rootNode.traverseLevelOrder(rootNode);
         }
     }
 
-    public void getAllLeafNodesAndSum(){
-        if (rootNode != null){
+    public void traverseZigZag() {
+        if (rootNode != null) {
+            rootNode.traverseZigZag(rootNode);
+        }
+    }
+
+    public void getAllLeafNodesAndSum() {
+        if (rootNode != null) {
             System.out.println(rootNode.getAllLeafNodesAndSum());
         }
     }
 
-    public void getAllLeafNodesAndSumWhichAreLeftChild(){
-        if (rootNode != null){
+    public void getAllLeafNodesAndSumWhichAreLeftChild() {
+        if (rootNode != null) {
             System.out.println(rootNode.getAllLeafNodesAndSumWhichAreLeftChild(true));
         }
     }
 
-    public int getHeightOfTree(){
+    public int getHeightOfTree() {
         return rootNode.getHeightOfTree(rootNode);
+    }
+
+    public int getDiameterOfTree() {
+        TreeNode.A a = rootNode.new A();
+        rootNode.getDiameterOfTree(rootNode, a);
+        return a.ans;
     }
 
     public void delete(int value) {
@@ -97,8 +109,11 @@ public class Tree {
         }
     }
 
-    public TreeNode getRootNode(){
+    public TreeNode getRootNode() {
         return rootNode;
     }
 
+    public void setRootNode(TreeNode rootNode) {
+        this.rootNode = rootNode;
+    }
 }

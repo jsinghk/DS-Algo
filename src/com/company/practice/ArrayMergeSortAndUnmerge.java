@@ -2,7 +2,7 @@ package com.company.practice;
 
 import java.util.*;
 
-public class MergeSortAndUnmerge {
+public class ArrayMergeSortAndUnmerge {
     public static void main(String[] args){
         int[] testArr = {1, 32, 567, 6, 9, 3, 46, 8};
         int k = 2;

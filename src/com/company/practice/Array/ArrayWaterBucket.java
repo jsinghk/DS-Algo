@@ -1,4 +1,4 @@
-package com.company.practice;
+package com.company.practice.Array;
 
 public class ArrayWaterBucket {
 

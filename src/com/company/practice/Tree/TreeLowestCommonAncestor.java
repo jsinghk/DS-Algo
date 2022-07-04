@@ -1,4 +1,4 @@
-package com.company.practice;
+package com.company.practice.Tree;
 
 import com.company.tree.Tree;
 import com.company.tree.TreeNode;
@@ -52,7 +52,7 @@ public class TreeLowestCommonAncestor {
     }
 
     //Time complexity is O(h) h is height of tree
-    //Space complexity is O(h) for recusrsive stack
+    //Space complexity is O(h) for recursive stack
     public static TreeNode lca(TreeNode root, int v1, int v2) {
         if (root.getData() > v1 && root.getData() > v2) {
             return lca(root.getLeftChild(), v1, v2);

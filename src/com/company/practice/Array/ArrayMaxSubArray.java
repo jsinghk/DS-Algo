@@ -1,4 +1,4 @@
-package com.company.practice;
+package com.company.practice.Array;
 
 public class ArrayMaxSubArray {
     public static void main(String[] args) {

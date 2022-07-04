@@ -1,11 +1,7 @@
-package com.company.practice;
+package com.company.practice.Tree;
 
 import com.company.tree.Tree;
 import com.company.tree.TreeNode;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class TreeFromArray {
 
@@ -50,7 +46,6 @@ public class TreeFromArray {
         inorderArrayCreation(binaryTree.getRootNode(), treeArray, binaryTree.getRootNode());
         return treeArray;
     }
-
     private static int inorderCount(TreeNode root){
         if (root == null){
             return 0;
@@ -60,7 +55,6 @@ public class TreeFromArray {
         count = count + inorderCount(root.getRightChild());
         return count;
     }
-
     private static void inorderArrayCreation(TreeNode root, int[] treeArray, TreeNode parent){
         if (root==null){
             return;
@@ -71,4 +65,6 @@ public class TreeFromArray {
         }
         inorderArrayCreation(root.getRightChild(), treeArray, parent);
     }
+
+
 }

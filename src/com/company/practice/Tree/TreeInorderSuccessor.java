@@ -1,4 +1,4 @@
-package com.company.practice;
+package com.company.practice.Tree;
 
 import com.company.tree.Tree;
 import com.company.tree.TreeNode;
@@ -62,7 +62,6 @@ public class TreeInorderSuccessor {
         InorderSucc(root, node);
 
     }
-
     private static TreeNode InorderSucc(TreeNode root, TreeNode node) {
         if (root == null) {
             return null;

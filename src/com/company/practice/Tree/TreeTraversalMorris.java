@@ -1,4 +1,4 @@
-package com.company.practice;
+package com.company.practice.Tree;
 
 import com.company.tree.Tree;
 import com.company.tree.TreeNode;

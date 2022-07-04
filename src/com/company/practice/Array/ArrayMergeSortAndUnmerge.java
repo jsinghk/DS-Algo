@@ -1,4 +1,4 @@
-package com.company.practice;
+package com.company.practice.Array;
 
 import java.util.*;
 

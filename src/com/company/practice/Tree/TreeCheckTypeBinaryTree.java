@@ -1,4 +1,4 @@
-package com.company.practice;
+package com.company.practice.Tree;
 
 import com.company.tree.Tree;
 import com.company.tree.TreeNode;
@@ -142,7 +142,6 @@ public class TreeCheckTypeBinaryTree {
             return ltree && rtree;
         }
     }
-
     static class Height {
         int height;
     }

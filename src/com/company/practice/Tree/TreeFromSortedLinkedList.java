@@ -26,6 +26,8 @@ public class TreeFromSortedLinkedList {
         tree.traverseLevelOrder();
     }
 
+    //Time complexity is O(n)
+    //Space complexity is O(n) for recursive stack
     public static TreeNode treeFromSortedLinkedList(int n) {
         if (n <= 0) {
             return null;

@@ -2,7 +2,7 @@ package com.company.list;
 
 public class IntegerLinkedList {
 
-    private IntegerNode head;
+    public IntegerNode head;
 
     public void addSorted(int value){
         IntegerNode node = new IntegerNode(value);

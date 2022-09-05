@@ -22,7 +22,7 @@ public class TreeFindDistanceBetweenTwoNodes {
     }
 
     public static int findDistance(TreeNode root, int n1, int n2) {
-        TreeNode lca = TreeLowestCommonAncestor.lcaBinaryTreeIter(root, n1, n2);
+        TreeNode lca = TreeLowestCommonAncestor.lcaBinaryTreeRecur(root, n1, n2);
         int l1 = TreeFindLevelOfNode.findLevel(lca, binaryTree.get(n1));
         int l2 = TreeFindLevelOfNode.findLevel(lca, binaryTree.get(n2));
         return l1 + l2;

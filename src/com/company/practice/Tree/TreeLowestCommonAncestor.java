@@ -25,7 +25,7 @@ public class TreeLowestCommonAncestor {
         int data = lca(binaryTree.getRootNode(), 26, 29).getData();
         int data1 = lcaIter(binaryTree.getRootNode(), 26, 29).getData();
         int data2 = lcaBinaryTree(binaryTree.getRootNode(), 17, 22);
-        TreeNode node = lcaBinaryTreeIter(binaryTree.getRootNode(), 17, 15);
+        TreeNode node = lcaBinaryTreeRecur(binaryTree.getRootNode(), 17, 15);
         int res = -1;
         if (v1 && v2) {
             res = node.getData();
@@ -160,7 +160,7 @@ public class TreeLowestCommonAncestor {
     //Time complexity is O(n)
     //Space complexity is O(n) for recursive stack
     static boolean v1 = false, v2 = false;
-    public static TreeNode lcaBinaryTreeIter(TreeNode root, int n1, int n2) {
+    public static TreeNode lcaBinaryTreeRecur(TreeNode root, int n1, int n2) {
         if (root == null){
             return null;
         }
@@ -173,8 +173,8 @@ public class TreeLowestCommonAncestor {
             v2 = true;
             temp = root;
         }
-        TreeNode ltree = lcaBinaryTreeIter(root.getLeftChild(), n1, n2);
-        TreeNode rtree = lcaBinaryTreeIter(root.getRightChild(), n1, n2);
+        TreeNode ltree = lcaBinaryTreeRecur(root.getLeftChild(), n1, n2);
+        TreeNode rtree = lcaBinaryTreeRecur(root.getRightChild(), n1, n2);
         if (temp != null) {
             return temp;
         }

@@ -2,7 +2,7 @@ package com.company.tree;
 
 public class Tree {
 
-    private TreeNode rootNode;
+    public TreeNode rootNode;
 
     public void insert(int value) {
         if (rootNode == null) {

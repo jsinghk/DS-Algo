@@ -17,7 +17,10 @@ public class TreeSumTree {
         binaryTree.insert(13);
         binaryTree.insert(11);
         binaryTree.insert(7);
-        createSumTree(binaryTree.getRootNode());
+        //createSumTree(binaryTree.getRootNode());
+        binaryTree.traverseLevelOrder();
+        System.out.println();
+        createGreaterSumTree(binaryTree.getRootNode());
         binaryTree.traverseLevelOrder();
         System.out.println();
 
@@ -83,5 +86,19 @@ public class TreeSumTree {
         boolean isLeaf() {
             return (left==null) && (right==null);
         }
+    }
+
+    //Time complexity is O(n)
+    //Space complexity is O(n) for recursive stack
+    //Sum tree with sum of all nodes greater than that node
+    static int sum=0;
+    public static void createGreaterSumTree(TreeNode root){
+        if (root==null){
+            return;
+        }
+        createGreaterSumTree(root.getRightChild());
+        sum = sum + root.getData();
+        root.setData(sum - root.getData());
+        createGreaterSumTree(root.getLeftChild());
     }
 }

@@ -23,6 +23,9 @@ public class TreeInorderSuccessor {
         System.out.println("Inorder Successor of " + searchNode.getData() + " : " +
                 binarySearchTree(binaryTree.getRootNode(), searchNode));
         binaryTree(binaryTree.getRootNode(), searchNode);
+        InorderSuccPredBinarySearchTree(binaryTree.rootNode, searchNode);
+        System.out.println("Inorder Predecessor of " + searchNode.getData() + " : " + pred.data);
+        System.out.println("Inorder Successor of " + searchNode.getData() + " : " + succ.data);
     }
 
     //Time complexity is O(h)
@@ -78,5 +81,39 @@ public class TreeInorderSuccessor {
             return root;
         }
         return null;
+    }
+
+    //Time complexity is O(h)
+    //Space complexity is O{n} for recursive stack
+    static TreeNode succ;
+    static TreeNode pred;
+    public static void InorderSuccPredBinarySearchTree(TreeNode root, TreeNode node) {
+        if (root == null) {
+            return;
+        }
+        if (root.data == node.data) {
+            if (root.leftChild != null){
+                TreeNode tempLeft = root.leftChild;
+                while (tempLeft.rightChild != null){
+                    tempLeft = tempLeft.rightChild;
+                }
+                pred = tempLeft;
+            }
+
+            if (root.rightChild != null){
+                TreeNode tempRight = root.rightChild;
+                while (tempRight.leftChild != null){
+                    tempRight = tempRight.leftChild;
+                }
+                succ = tempRight;
+            }
+            return;
+        } else if (root.data > node.data) {
+            succ = root;
+            InorderSuccPredBinarySearchTree(root.leftChild, node);
+        } else {
+            pred = root;
+            InorderSuccPredBinarySearchTree(root.rightChild, node);
+        }
     }
 }

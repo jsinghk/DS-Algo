@@ -1,6 +1,5 @@
 package com.company.practice.Tree;
 
-import com.company.tree.Tree;
 import com.company.tree.TreeNode;
 
 import java.util.ArrayList;

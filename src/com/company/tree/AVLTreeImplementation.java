@@ -1,10 +1,10 @@
-package com.company.practice.Tree;
+package com.company.tree;
 
 /*
  Tree for which difference of height between left and right subtree is not
  greater than one for all nodes.
 */
-public class AvlTreeInsertionDeletion {
+public class AVLTreeImplementation {
 
     public static void main(String[] args) {
         AVLTree avlTree = new AVLTree();
@@ -202,5 +202,4 @@ public class AvlTreeInsertionDeletion {
             }
         }
     }
-
 }
